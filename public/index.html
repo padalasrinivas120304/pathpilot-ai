@@ -29,7 +29,8 @@ async function send(){
   chat.innerHTML += `<div class="user">${msg}</div>`;
   document.getElementById("msg").value = "";
 
-  const res = await fetch("/chat", {
+const res = await fetch("/.netlify/functions/chat", {
+{
     method:"POST",
     headers:{ "Content-Type":"application/json" },
     body:JSON.stringify({ message: msg })
@@ -42,3 +43,4 @@ async function send(){
 
 </body>
 </html>
+
